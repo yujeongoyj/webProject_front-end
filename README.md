@@ -1,2 +1,1 @@
-# webProject_front-end
-# 야호
+프로젝트 npm 버전이 최신버전이 아니어서 npm깔면서 다운그레이드 시켜줘야함 ㅜㅜ
