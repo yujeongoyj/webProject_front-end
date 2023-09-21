@@ -1,8 +1,7 @@
 import React from 'react';
-import './App.scss';
-import Header  from './Header';
-import Middle from './Middle';
-import Bottom from './Bottom';
+import Header  from './Projecet_1/Header/Header'
+import Middle from './Projecet_1/Middle/Middle'
+import Bottom from './Projecet_1/Bottom/Bottom';
 
 function App() {
   return (
