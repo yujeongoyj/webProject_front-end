@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@500&family=Lato:wght@400;900&family=Lora:wght@700&display=swap');
+
+
+html {
+  font-size: 62.5%;
+  height: 100%;
+  display: block;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  outline: none;
+}
+
+
+body {
+  overflow-x: hidden; overflow-y: auto;
+}
+
+div {
+  display: block;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
