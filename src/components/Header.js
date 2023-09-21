@@ -104,6 +104,7 @@ const LogoA = styled.a`
 `;
 const MainHeaderMiddle = styled.div`
   border: 2px solid rgb(0, 68, 120);
+  border: 2px solid rgb(0, 68, 170);
   width: 460px;
   height: 40px;
   box-sizing: border-box;
@@ -117,7 +118,7 @@ const MainHeaderMiddleContainer = styled.div`
   padding: 0px 15px;
   box-sizing: border-box;
   input {
-    color: rgb(102, 102, 102);
+    color: rgb(0, 68, 170);
     flex-grow: 1;
     appearance: none;
     border: none;
