@@ -8,6 +8,7 @@ import sell from "../image/sell.png";
 import hbg from "../image/hbg.png";
 import arrowRight from "../image/arrowRight.png";
 import { history } from "../redux/configureStore";
+import logo from "../image/logo.png";
 
 const Header = () => {
 
@@ -26,7 +27,7 @@ const Header = () => {
         <MainHeaderContainer>
           <MainHeaderTop>
             <LogoA onClick={()=>history.push('/')}>
-              <img src={header_logo} alt="logo" />
+              <img src={logo} alt="logo" />
             </LogoA>
             <MainHeaderMiddle>
               <MainHeaderMiddleContainer>
@@ -102,7 +103,7 @@ const LogoA = styled.a`
   }
 `;
 const MainHeaderMiddle = styled.div`
-  border: 2px solid rgb(247, 47, 51);
+  border: 2px solid rgb(0, 68, 120);
   width: 460px;
   height: 40px;
   box-sizing: border-box;
