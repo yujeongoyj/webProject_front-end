@@ -1,5 +1,9 @@
 import React from "react";
-import './Middle.css'
+import './Middle.css';
+import '../components/Button';
+import AddProduct from '../pages/AddProduct'
+import Button from "../components/Button";
+
 
 function Middle() {
     return(
@@ -15,7 +19,9 @@ function Middle() {
                         <br/>
                         지금 경험해보세요.
                     </span>
+                    <Button></Button>
                 </div>
+                
         </div>
     );
 }
