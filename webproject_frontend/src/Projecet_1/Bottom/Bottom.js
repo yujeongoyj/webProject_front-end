@@ -1,150 +1,61 @@
-import React from "react";
-import './Bottom.css'
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import Loading from '../Product/Loading';
+ // Bottom 컴포넌트에 해당하는 CSS 파일을 불러옵니다.
+import Product from '../Product/Product';
+import './Product.css'
 
+const Bottom = () => {
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [products, setProducts] = useState([]);
 
-function Bottom() {
-    return(
-        <div className="bottom">
-            <h1 className="bottom_list_title">중고거래 매물</h1>
+  useEffect(() => {
+    const apiUrl = '/product';
 
-        <div className="card_product">
+    axios.get(apiUrl)
+      .then(response => {
+        console.log(response.data); // API 응답 데이터 확인
+        setProducts(response.data); // API 응답의 products 배열을 상태에 설정
+        setLoading(false); // 로딩 상태 업데이트
+      })
+      .catch(error => {
+        console.error('Error fetching data: ', error);
+        setError(error); // 에러 상태 업데이트
+        setLoading(false); // 로딩 상태 업데이트
+      });
+  }, []); // useEffect를 한 번만 실행하도록 빈 배열을 두 번째 인자로 전달
 
-            <article className="card_top">  {/* 매물 볼 수 있는 이미지 */}
-                <a className="card_link">  {/* 구매 주소 */}
-                <div className="card_photo"> 
-                    <img className="card_photoimg" alt="예시이미지" src="https://dnvefa72aowie.cloudfront.net/origin/article/202309/4ae232cb1c73dd693de0f3ce823cea48b10aad0012e37fc891bb6c4f35ee6e81.jpg?q=82&amp;s=300x300&amp;t=crop&amp;f=webp"/>
-                </div> {/* 사진 */}
-                    
-                <div className="card_desc"> {/* 설명 */}
-                    <h2 className="card_title">예시이미지</h2> {/* 제목 */}
-                    <div className="card_price"> 70,000원</div> {/* 가격 */}
-                    <div className="crd_region_name">경기도 안양시</div> {/* 주소 */}
-                    <div className="card_counts">
-                        <span>관심 91</span>
-                                ∙
-                        <span>채팅 30</span>
-                    </div> {/* 관심 및 채팅 횟수 */}
-                </div>
-             </a>
-            </article> 
+  if (loading) {
+    return <Loading />;
+  }
 
-            <article className="card_top">  {/* 매물 볼 수 있는 이미지 */}
-                <a className="card_link">  {/* 구매 주소 */}
-                <div className="card_photo"> 
-                    <img className="card_photoimg" alt="예시이미지" src="https://dnvefa72aowie.cloudfront.net/origin/article/202309/4ae232cb1c73dd693de0f3ce823cea48b10aad0012e37fc891bb6c4f35ee6e81.jpg?q=82&amp;s=300x300&amp;t=crop&amp;f=webp"/>
-                </div> {/* 사진 */}
-                    
-                <div className="card_desc"> {/* 설명 */}
-                    <h2 className="card_title">예시이미지</h2> {/* 제목 */}
-                    <div className="card_price"> 70,000원</div> {/* 가격 */}
-                    <div className="crd_region_name">경기도 안양시</div> {/* 주소 */}
-                    <div className="card_counts">
-                        <span>관심 91</span>
-                                ∙
-                        <span>채팅 30</span>
-                    </div> {/* 관심 및 채팅 횟수 */}
-                </div>
-             </a>
-            </article> 
+  if (!products || products.length === 0) {
+    return <div>No products available.</div>;
+  }
 
-            <article className="card_top">  {/* 매물 볼 수 있는 이미지 */}
-                <a className="card_link">  {/* 구매 주소 */}
-                <div className="card_photo"> 
-                    <img className="card_photoimg" alt="예시이미지" src="https://dnvefa72aowie.cloudfront.net/origin/article/202309/4ae232cb1c73dd693de0f3ce823cea48b10aad0012e37fc891bb6c4f35ee6e81.jpg?q=82&amp;s=300x300&amp;t=crop&amp;f=webp"/>
-                </div> {/* 사진 */}
-                    
-                <div className="card_desc"> {/* 설명 */}
-                    <h2 className="card_title">예시이미지</h2> {/* 제목 */}
-                    <div className="card_price"> 70,000원</div> {/* 가격 */}
-                    <div className="crd_region_name">경기도 안양시</div> {/* 주소 */}
-                    <div className="card_counts">
-                        <span>관심 91</span>
-                                ∙
-                        <span>채팅 30</span>
-                    </div> {/* 관심 및 채팅 횟수 */}
-                </div>
-             </a>
-            </article> 
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
 
-            <article className="card_top">  {/* 매물 볼 수 있는 이미지 */}
-                <a className="card_link">  {/* 구매 주소 */}
-                <div className="card_photo"> 
-                    <img className="card_photoimg" alt="예시이미지" src="https://dnvefa72aowie.cloudfront.net/origin/article/202309/4ae232cb1c73dd693de0f3ce823cea48b10aad0012e37fc891bb6c4f35ee6e81.jpg?q=82&amp;s=300x300&amp;t=crop&amp;f=webp"/>
-                </div> {/* 사진 */}
-                    
-                <div className="card_desc"> {/* 설명 */}
-                    <h2 className="card_title">예시이미지</h2> {/* 제목 */}
-                    <div className="card_price"> 70,000원</div> {/* 가격 */}
-                    <div className="crd_region_name">경기도 안양시</div> {/* 주소 */}
-                    <div className="card_counts">
-                        <span>관심 91</span>
-                                ∙
-                        <span>채팅 30</span>
-                    </div> {/* 관심 및 채팅 횟수 */}
-                </div>
-             </a>
-            </article> 
-
-            <article className="card_top">  {/* 매물 볼 수 있는 이미지 */}
-                <a className="card_link">  {/* 구매 주소 */}
-                <div className="card_photo"> 
-                    <img className="card_photoimg" alt="예시이미지" src="https://dnvefa72aowie.cloudfront.net/origin/article/202309/4ae232cb1c73dd693de0f3ce823cea48b10aad0012e37fc891bb6c4f35ee6e81.jpg?q=82&amp;s=300x300&amp;t=crop&amp;f=webp"/>
-                </div> {/* 사진 */}
-                    
-                <div className="card_desc"> {/* 설명 */}
-                    <h2 className="card_title">예시이미지</h2> {/* 제목 */}
-                    <div className="card_price"> 70,000원</div> {/* 가격 */}
-                    <div className="crd_region_name">경기도 안양시</div> {/* 주소 */}
-                    <div className="card_counts">
-                        <span>관심 91</span>
-                                ∙
-                        <span>채팅 30</span>
-                    </div> {/* 관심 및 채팅 횟수 */}
-                </div>
-             </a>
-            </article> 
-
-            <article className="card_top">  {/* 매물 볼 수 있는 이미지 */}
-                <a className="card_link">  {/* 구매 주소 */}
-                <div className="card_photo"> 
-                    <img className="card_photoimg" alt="예시이미지" src="https://dnvefa72aowie.cloudfront.net/origin/article/202309/4ae232cb1c73dd693de0f3ce823cea48b10aad0012e37fc891bb6c4f35ee6e81.jpg?q=82&amp;s=300x300&amp;t=crop&amp;f=webp"/>
-                </div> {/* 사진 */}
-                    
-                <div className="card_desc"> {/* 설명 */}
-                    <h2 className="card_title">예시이미지</h2> {/* 제목 */}
-                    <div className="card_price"> 70,000원</div> {/* 가격 */}
-                    <div className="crd_region_name">경기도 안양시</div> {/* 주소 */}
-                    <div className="card_counts">
-                        <span>관심 91</span>
-                                ∙
-                        <span>채팅 30</span>
-                    </div> {/* 관심 및 채팅 횟수 */}
-                </div>
-             </a>
-            </article> 
-
-            <article className="card_top">  {/* 매물 볼 수 있는 이미지 */}
-                <a className="card_link">  {/* 구매 주소 */}
-                <div className="card_photo"> 
-                    <img className="card_photoimg" alt="예시이미지" src="https://dnvefa72aowie.cloudfront.net/origin/article/202309/4ae232cb1c73dd693de0f3ce823cea48b10aad0012e37fc891bb6c4f35ee6e81.jpg?q=82&amp;s=300x300&amp;t=crop&amp;f=webp"/>
-                </div> {/* 사진 */}
-                    
-                <div className="card_desc"> {/* 설명 */}
-                    <h2 className="card_title">예시이미지</h2> {/* 제목 */}
-                    <div className="card_price"> 70,000원</div> {/* 가격 */}
-                    <div className="crd_region_name">경기도 안양시</div> {/* 주소 */}
-                    <div className="card_counts">
-                        <span>관심 91</span>
-                                ∙
-                        <span>채팅 30</span>
-                    </div> {/* 관심 및 채팅 횟수 */}
-                </div>
-             </a>
-            </article> 
-
+  return (
+    <div className="bottom">
+       <h1 className="bottom_list_title">중고거래 매물</h1>
+    <div className="card_product">
+        {products.map((productData) => (
+          <div className="custom-product-wrapper" key={productData.products.id}>
+            <Product className="product-item"
+              id={productData.products.id}
+              image={productData.products.image}
+              productName={productData.products.productName} 
+              description={productData.products.description}
+              price={productData.products.price}
+            />
+          </div>
+        ))}
         </div>
     </div>
-    );
-}
+  );
+};
 
 export default Bottom;

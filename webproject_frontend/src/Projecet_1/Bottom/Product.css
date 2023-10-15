@@ -1,0 +1,82 @@
+/* Bottom.css */
+  @media (min-width: 768px){
+    .bottom_list_title {
+      font-size: 32px;
+      line-height: 43.2px;
+      text-align: center;
+      font-weight: 700;
+      margin-bottom: 20px;
+      margin-top: 15px;
+    }
+  }
+  @media (min-width: 768px){
+    .bottom {
+      padding-top: 50px;
+    }
+  }
+  
+  .card {
+    margin-right: 15px;
+    border-radius: 1px;
+    background-color: aliceblue;
+  }
+  
+  .card_product {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-right: 20px;
+    text-decoration: none;
+    color: #212529;
+  }
+
+  .product-item {
+    width: 223px;
+    margin-bottom: 56px;
+  }
+  .custom-product-wrapper {
+    width: 223px;
+    margin-bottom: 56px;
+    text-decoration: none;
+    color: #212529;
+  }
+
+  .card_price {
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 4px;
+  }
+
+  @media (min-width: 768px){
+    .card_photo {
+      width: 100%;
+      padding-top: 50%;
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      background-color: #F8F9FA;
+      box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 15);
+      box-sizing: border-box;
+    }
+  }
+
+  .card_photoimg {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 12px;
+    border: 1px solid transparent;
+  }
+
+  .card_title {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  
+  .card_desc {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
