@@ -2,11 +2,11 @@
 
 import React from 'react';
 import styled from "styled-components";
-import logo from "../image/image/logo.png";
-import notion from "../image/image/notion.png";
-import blog from "../image/image/blog.png";
-import facebook from "../image/image/facebook.png";
-import instagram from "../image/image/instagram.png";
+import logo from "../image/logo.png";
+import notion from "../image/notion.png";
+import blog from "../image/blog.png";
+import facebook from "../image/facebook.png";
+import instagram from "../image/instagram.png";
 
 const Footer = () => {
     return (
