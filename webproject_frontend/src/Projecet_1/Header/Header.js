@@ -2,7 +2,11 @@ import React from "react";
 import './Header.css';
 import hbg from '../images/hbg.png';
 import search from '../images/search.png';
+import sell from '../images/sell.png';
+import mystore from '../images/mystore.png';
+import login from '../images/login.png';
 import styled from "styled-components";
+
 
 function Header() {
 //     return(
@@ -52,6 +56,7 @@ function Header() {
         <MainHeaderContainer>
           <MainHeaderTop>
             <LogoA>
+            <img className="header_logo" src="https://www.daelim.ac.kr/type/KOR_A/img/intro/logo.png"/>
               {/* <img alt="logo" /> */}
             </LogoA>
             <MainHeaderMiddle>
@@ -66,15 +71,15 @@ function Header() {
             </MainHeaderMiddle>
             <MainHeaderRight>
               <HeaderRightA>
-                {/* <img alt="talk" /> */}
+              {/* <img src={login} alt="login" /> */}
                 로그인
               </HeaderRightA>
               <HeaderRightA>
-                {/* <img alt="mystore" /> */}
+              <img src={mystore} alt="mystore" />
                 내상점
               </HeaderRightA>
               <HeaderRightA>
-                {/* <img alt="mystore" /> */}
+              <img src={sell} alt="mystore" />
                 판매하기
               </HeaderRightA>
             </MainHeaderRight>
