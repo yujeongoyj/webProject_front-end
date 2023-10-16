@@ -79,11 +79,11 @@ function Middle() {
     return (
         <BannerBox>
             <Slick {...settings}>
-                <div><Img src={banner1}/></div>
-                <div><Img src={banner2}/></div>
-                <div><Img src={banner3}/></div>
-                <div><Img src={banner4}/></div>
-                <div><Img src={banner5}/></div>
+                <div><Img src="https://media.bunjang.co.kr/images/nocrop/1053030467_w1197.jpg"/></div>
+                <div><Img src="https://media.bunjang.co.kr/images/nocrop/1050965086_w1197.jpg"/></div>
+                <div><Img src="https://media.bunjang.co.kr/images/nocrop/1051919701_w1197.jpg"/></div>
+                <div><Img src="https://media.bunjang.co.kr/images/nocrop/1050941351_w1197.jpg"/></div>
+                <div><Img src="https://media.bunjang.co.kr/images/nocrop/1051702102_w1197.jpg"/></div>
             </Slick>
         </BannerBox>
     );

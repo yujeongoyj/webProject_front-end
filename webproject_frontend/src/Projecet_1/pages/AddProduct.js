@@ -253,10 +253,9 @@ const Imageupload = styled.div`
 const ImageText = styled.div`
     color: rgb(74, 164, 255);
     margin-top: 30px;
+    margin-bottom:10px
     font-size: 12px;
-    p {
-        line-height:0.4;
-    }
+   
 `;
 
 const Subject = styled.div`
