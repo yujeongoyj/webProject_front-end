@@ -1,7 +1,8 @@
 import React from "react";
 import './Header.css'
 
-function top() {
+
+function Header() {
     return(
         <div className="header">
             <div className="headertwo">
@@ -43,4 +44,4 @@ function top() {
     );
 }
 
-export default top;
+export default Header;
