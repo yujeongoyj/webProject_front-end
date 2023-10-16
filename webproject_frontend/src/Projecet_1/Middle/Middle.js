@@ -4,11 +4,6 @@ import '../components/Button';
 import styled from "styled-components";
 import AddProduct from '../pages/AddProduct'
 import Button from "../components/Button";
-import banner1 from "../images/banner1.jpg";
-import banner2 from "../images/banner2.jpg";
-import banner3 from "../images/banner3.jpg";
-import banner4 from "../images/banner4.jpg";
-import banner5 from "../images/banner5.jpg";
 import prev from "../images/next.png";
 import next from "../images/prev.png";
 import Slick from "react-slick";
