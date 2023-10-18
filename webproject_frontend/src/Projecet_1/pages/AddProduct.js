@@ -74,7 +74,7 @@ const AddProduct = (props) => {
                             </div>
                         </SubjectLeft>
                         <SubjectBottom>
-                            <img style={{marginRight:"4px"}} alt="금지티콘"/>
+                            
                             상품명을 2자 이상 입력해주세요
                         </SubjectBottom>
                     </RightSide>
