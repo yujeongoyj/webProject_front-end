@@ -1,82 +1,65 @@
 /* Bottom.css */
-  @media (min-width: 768px){
-    .bottom_list_title {
-      font-size: 32px;
-      line-height: 43.2px;
-      text-align: center;
-      font-weight: 700;
-      margin-bottom: 20px;
-      margin-top: 15px;
-    }
+@media (min-width: 768px) {
+  .bottom_list_title {
+    font-size: 32px;
+    line-height: 43.2px;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 20px;
+    margin-top: 15px;
   }
-  @media (min-width: 768px){
-    .bottom {
-      padding-top: 50px;
-    }
+
+  .bottom {
+    padding-top: 50px;
   }
-  
-  .card {
-    margin-right: 15px;
-    border-radius: 1px;
-    background-color: aliceblue;
-  }
-  
+
   .card_product {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin-right: 20px;
     text-decoration: none;
-    color: #212529;
+    margin-bottom: 56px;
   }
 
   .product-item {
-    width: 223px;
-    margin-bottom: 56px;
-  }
-  .custom-product-wrapper {
-    width: 223px;
-    margin-bottom: 56px;
-    text-decoration: none;
-    color: #212529;
+    width: 194px;
+    margin-bottom: 20px;
+    margin-right: 20px;
   }
 
-  .card_price {
-    font-size: 15px;
-    font-weight: 700;
-    line-height: 1.5;
-    margin-bottom: 4px;
-  }
-
-  @media (min-width: 768px){
-    .card_photo {
-      width: 100%;
-      padding-top: 50%;
-      position: relative;
-      overflow: hidden;
-      border-radius: 12px;
-      background-color: #F8F9FA;
-      box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 15);
-      box-sizing: border-box;
-    }
+  .card_photo {
+    width: 194px;
+    height: 194px; /* 이미지의 세로 길이를 194px로 일정하게 유지 */
+    position: relative;
+    overflow: hidden;
+    margin-right: 15px;
+    border-radius: 12px;
   }
 
   .card_photoimg {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100%;
-    box-sizing: border-box;
-    border-radius: 12px;
-    border: 1px solid transparent;
+    width: 100%; /* 이미지의 가로 길이를 카드의 너비(194px)에 맞추어 유지 */
+    height: auto; /* 이미지 비율 유지 */
+    border-radius: 12px; /* 이미지에도 border-radius 추가 */
   }
 
   .card_title {
     padding-top: 5px;
     padding-bottom: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
-  
+
   .card_desc {
-    padding-top: 5px;
-    padding-bottom: 5px;
+    width: 100%;
+    padding-left: 10px;
+    font-size: 14px;
+    color: #666;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
+}
