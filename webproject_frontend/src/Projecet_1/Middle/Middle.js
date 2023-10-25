@@ -9,6 +9,8 @@ import next from "../images/prev.png";
 import Slick from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import ProductDetail from "../productdetail/ProductDetail";
+import { useNavigate } from "react-router-dom";
 
 
 function Middle() {
@@ -38,7 +40,7 @@ function Middle() {
           <div
             className={className}
             style={{ ...style, display: "block"}}
-            onClick={onClick}
+            onClick={onclick}
           >
           <ArrowLeft><img style={{width:"15px", height:"30px"}} src={next} alt="arrowLeft"/></ArrowLeft>
           </div>
@@ -51,12 +53,14 @@ function Middle() {
           <div
             className={className}
             style={{ ...style, display: "block"}}
-            onClick={onClick}
+            onClick={onclick}
           >
           <ArrowRight><img style={{width:"15px", height:"30px"}} src={prev} alt="arrowRight"/></ArrowRight>
           </div>
         );
       }
+
+      
 
       const settings = {
         dots: false,
@@ -71,6 +75,8 @@ function Middle() {
         slidesToScroll: 1,
     };
 
+
+      
     return (
         <BannerBox>
             <Slick {...settings}>
