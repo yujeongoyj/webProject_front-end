@@ -11,7 +11,7 @@ const Bottom = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    const apiUrl = '/product';
+    const apiUrl = '/productdetail';
 
     axios.get(apiUrl)
       .then(response => {

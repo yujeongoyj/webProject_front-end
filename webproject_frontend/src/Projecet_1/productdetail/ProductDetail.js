@@ -1,88 +1,68 @@
 // src/components/ProductDetail.js
 
-import React from 'react';
+import React, {useState} from 'react';
 import Bottom from '../Bottom/Bottom';
+import Product from '../Product/Product';
 import './ProductDetail.css';
 import styled from 'styled-components';
+import miniheart from "../image/miniheart.png";
+import minieyes from "../image/minieyes.png";
+import minitime from "../image/minitime.png";
+import redheart from "../image/redheart.svg";
+import whiteheart from "../image/whiteheart.svg";
 import { useParams } from 'react-router-dom';
 
 const ProductDetail = (props) => {
   
-  //const { product_image, pid, name, price} = props.data;
+ // const { id, image, productName, description, Price} = props.data;
 
   return (
-    <Card>
-      <CardHead>
-        <img alt= "예시이미지" src="https://dnvefa72aowie.cloudfront.net/origin/article/202309/4ae232cb1c73dd693de0f3ce823cea48b10aad0012e37fc891bb6c4f35ee6e81.jpg?q=82&amp;s=300x300&amp;t=crop&amp;f=webp"/>
-      </CardHead>
-      <div className='detailcontents'>
-        <ItemName>가방</ItemName>
-        <Price>70,000원</Price>
-
-        <p>상품상태 중고</p>
-        <p>교환여부 교환불가능</p>
-        <button>찜</button>
-        <button>대림톡</button>
-        <button>바로구매</button>
-      </div>
-    </Card>
-  );
-};
-
-const Card= styled.div`
-  width: 196px;
-  margin-right: 11px;
-  margin-bottom: 11px;
-  &:nth-child(5n) {
-    margin-right: 0;
-  }
-  `;
-
-const CardHead = styled.div`
-  position: relative;
-  width: 100%;
-  height: 194px;
-  img {
-    vertical-align: bottom;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
-  }
-`;
-
-const ItemName = styled.div`
-  position: relative;
-  font-size: 14px;
-  padding-bottom: 20px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-`;
-
-const ItemContentBottom = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 20px;
-`;
-
-const Price = styled.div`
-  font-size: 16px;
-  font-weight: 600;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-  &::after{
-    content: "원";
-    font-size: 13px;
-    margin-left: 3px;
-  }
-`;
-const Time = styled.div`
-  font-size: 12px;
-  color: rgb(136, 136, 136);
-`;
+    <div style={{width:"1024px", height:"490px", margin:"0 auto"}}>
+      <div className='productDetail'>
+        <div className='card'>
+          <img  className='photoImg' style={{width:"428px", height:"428px"}} src="https://dnvefa72aowie.cloudfront.net/origin/article/202309/4ae232cb1c73dd693de0f3ce823cea48b10aad0012e37fc891bb6c4f35ee6e81.jpg?q=82&amp;s=300x300&amp;t=crop&amp;f=webp" alt="이미지"/>
+        </div>
+        <div className='detailsContainer'>
+          <div className='detailHeader'>
+            <h2 className='productName'>가방</h2>
+            <h1 className='price'>70,000<span>원</span></h1>
+          </div>
+          <div className='detailTop'>
+            <div className='like'>
+              <img className='miniLike' style={{width: "16px", height:"16px", marginRight:"3px"}} src={miniheart} alt="미니하트"/>                <p className='likeNumber'>2</p>   
+            </div>
+            <div className='click'>
+              <img className='miniEyes' style={{width: "21px", height:"13px", marginRight:"3px"}} src={minieyes} alt="미니아이즈"/>
+              <p className='clickNumber'>28</p>
+            </div>
+            <div className='time'>
+              <img className='miniTime' style={{width: "16px", height:"16px", marginRight:"3px"}} src={minitime} alt="미니시계"/>
+              <p className='timeNumber'>2시간전</p>
+            </div>
+          </div>
+          <div className='detailMiddle'>
+            <div style={{display:"flex", marginBottom:"20px"}}>
+              <p className='productState' >상품상태</p>
+              <p className='used'>중고</p>
+            </div>
+            <div style={{display:"flex", marginBottom:"20px"}}>
+              <p className='excahnge'>교환여부</p>
+              <p className='exchangeStatus'>교환가능</p>
+            </div>
+          </div>
+            <div className='detailBottom'>
+              <button type='button' className='button1' >
+                <img className='maxLike' src={whiteheart} alt="하얀색하트"/>
+                <p className='shoppingBasket'>찜</p>
+                <p className='shoppingBasketNumber'>2</p>
+              </button>
+              <button type='button' className='talk'>대림톡</button>
+              <button type='button' className='buy'>바로구매</button>
+            </div>
+          </div>
+        </div>
+    </div>
+  )
+}
 
 export default ProductDetail;
