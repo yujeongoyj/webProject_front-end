@@ -1,7 +1,7 @@
 import React, {useCallback} from 'react'
 
 import styled from "styled-components";
-//import {useDispatch, useSelector} from "react-redux";
+
 
 
 
@@ -18,10 +18,46 @@ const Login = () => {
             window.alert("모두 입력해주세요")
             return;
         }
-        //dispatch(userActions.loginAPI(username,pwd));
-        //history.push("/");
+      
 
     }
+
+    const SignUp = () => {
+        <div>
+        <div>
+            <LoginContainer>
+                <ContentsContainer>
+                    <MainName>
+                        {/* <img style={{width:"30px", height:"38px", marginRight:"8px"}} src={thunderlogo}/> */}
+                        <TextMain>번개장터 회원가입</TextMain>
+                    </MainName>
+                    <div>
+                        <TextSub>ID/PW/이메일을 모두 입력해주세요!</TextSub>
+                    </div>
+                    <div>
+                        <div>
+                            <IDPW>ID</IDPW>
+                            <Input placeholder="아이디를 입력해주세요!" type="text" value={username} />
+                        </div>
+                        <div>
+                            <IDPW>E-MAIL</IDPW>
+                            <Input placeholder="이메일을 입력해주세요!" type="text" />
+                        </div>
+                        <div>
+                            <IDPW>패스워드</IDPW>
+                            <Input placeholder="비밀번호를 입력해주세요!" type="password" value={pwd} />
+                        </div>
+                        <div>
+                            <IDPW>패스워드 재확인</IDPW>
+                            <Input placeholder="비밀번호를 다시 입력해주세요!" type="password" />
+                        </div>
+                    </div>
+                    <LoginBtn>회원가입</LoginBtn>
+                </ContentsContainer>
+            </LoginContainer>
+        </div>
+    </div>
+    };
 
     return (
         <div>
@@ -29,7 +65,7 @@ const Login = () => {
                 <ContentContainer>
                     <MainName>
                         
-                        <TextMain>번개장터 로그인</TextMain>
+                        <TextMain>ReUseIt 로그인</TextMain>
                     </MainName>
                     <div>
                         <TextSub>아이디와 패스워드를 입력해주세요!</TextSub>
@@ -45,7 +81,7 @@ const Login = () => {
                         </div>
                     </div>
                         <LoginBtn onClick={LogIn}>로그인</LoginBtn>
-                        <SignBtn onClick={()=>{}}>회원가입 하러가기</SignBtn>
+                        <SignBtn onClick={SignUp}>회원가입 하러가기</SignBtn>
                     </ContentContainer>
             </LoginContainer>
         </div>
@@ -100,10 +136,10 @@ const Input = styled.input`
 
 const LoginBtn = styled.button`
     margin-top: 30px;
-    background: rgb(247, 47, 51);
+    background: rgb(96, 174, 232);
     color: rgb(255, 255, 255);
     width: 100%;
-    height: 3.2rem;
+    height: 4.5rem;
     line-height: 3.2rem;
     font-weight: bold;
     font-size: 18px;
@@ -118,7 +154,7 @@ const SignBtn = styled.button`
     background: #6930c3;
     color: rgb(255, 255, 255);
     width: 100%;
-    height: 3.2rem;
+    height: 5rem;
     line-height: 3.2rem;
     font-weight: bold;
     font-size: 18px;
@@ -133,5 +169,22 @@ const IDPW = styled.div`
     color: rgb(33,33,33); 
     margin: 5px 0px 5px 5px;  
 `;
+
+
+
+
+
+
+const ContentsContainer = styled.div`
+    width: 100%;
+    margin:0 auto;
+`;
+
+
+
+
+
+
+
 
 export default Login;
