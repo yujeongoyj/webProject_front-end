@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState } from 'react';
 import Header from '../Header/Header';
 import './AddProduct.css';
@@ -169,6 +170,13 @@ const AddProduct = (props) => {
         </Container>
         </div>
     )
+=======
+import React from "react";
+
+
+const AddProduct = () => {
+    
+>>>>>>> main
 }
 
 const Container = styled.div`

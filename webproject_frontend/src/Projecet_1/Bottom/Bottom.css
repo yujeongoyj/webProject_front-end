@@ -11,13 +11,15 @@
     text-align: center;
     font-weight: 700;
     margin-bottom: 20px;
+    margin-top: 15px;
   }
 }
 
 @media (min-width: 768px){
   .card_product {
-    margin-top: 40px;
+    margin-top: 15px;
     width: 757px;
+    display: flex;
   }
 }
 

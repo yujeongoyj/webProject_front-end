@@ -1,7 +1,12 @@
 import { useLinkClickHandler } from 'react-router-dom';
 import './Button.css';
+<<<<<<< HEAD
 import React, {useState} from 'react';
 import AddProduct from '../pages/AddProduct';
+=======
+import axios from 'axios';
+
+>>>>>>> main
 
 
 const Button = (props) => {
