@@ -1,0 +1,39 @@
+
+.header {
+    padding: 20px;
+    background-color: #ffffff;
+    text-align: center;
+  }
+  
+  .product-registration {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 400px;
+  }
+  
+  .product-registration h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .product-registration input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .product-registration button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .product-registration button:hover {
+    background-color: #0056b3;
+  }
+  

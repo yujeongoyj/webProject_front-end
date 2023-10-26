@@ -1,21 +1,21 @@
 button {
-    margin-top: 10px;
-    padding: 10px 15px; /* 내용 주위의 여백 설정 */
-    font-size: 16px; 
-    background-color: #1aa174; 
-    color: #fff; 
-    border: none; 
-    border-radius: 5px; 
-    cursor: pointer; /* 커서 스타일 변경 */
-    transition: background-color 0.3s ease; /* 배경색 전환 효과 */
-  }
+  margin-top: 10px;
+  padding: 10px 15px; /* 내용 주위의 여백 설정 */
+  font-size: 16px; 
+  background-color: #1aa174; 
+  color: #fff; 
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer; /* 커서 스타일 변경 */
+  transition: background-color 0.3s ease; /* 배경색 전환 효과 */
+}
 
-  
-  button:hover {
-    background-color: #1aa174;
-  }
 
-  
-  button:active {
-    background-color: #091c03;
-  }
+button:hover {
+  background-color: #1aa174;
+}
+
+
+button:active {
+  background-color: #091c03;
+}
