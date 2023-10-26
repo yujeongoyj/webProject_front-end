@@ -1,25 +1,22 @@
 import React from 'react';
-import Header  from './Projecet_1/Header/Header'
-import Middle from './Projecet_1/Middle/Middle'
-import Bottom from './Projecet_1/Bottom/Bottom';
-import Footer from './Projecet_1/Foofer/Footer';
-import { BrowserRouter as Router, Route, Switch, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Login from './Projecet_1/pages/Login';
-
+import MainPage from './Projecet_1/pages/MainPage';
+import SignUp from './Projecet_1/pages/SignUp';
+import AddProduct from './Projecet_1/pages/AddProduct';
 
 function App() {
   return (
-  <Router>
-   <div className="App">
-    <Routes>
-     <Route path="/login" component={Login} />
-    </Routes>
-      <Header/>
-      <Middle/>
-      <Bottom/>
-      <Footer/>
-   </div>
-  </Router>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<MainPage/>} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/SignUp" element={<SignUp/>} />
+          <Route path="/AddProduct" element={<AddProduct/>} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

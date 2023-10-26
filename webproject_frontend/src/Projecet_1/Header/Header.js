@@ -8,11 +8,20 @@ import styled from "styled-components";
 import  {useState} from 'react'
 import { Link } from "react-router-dom";
 import Login from '../pages/Login';
+import { useNavigate } from "react-router-dom";
 
 
 
 function Header() {
+  const navigate = useNavigate();
 
+  const movingLogin = () => {
+    navigate("/login");
+  };
+
+  const AddProduct = () => {
+    navigate("/AddProduct");
+  };
 
 
   return (
@@ -31,14 +40,15 @@ function Header() {
             </MainHeaderMiddleContainer>
           </MainHeaderMiddle>
           <MainHeaderRight>
-            <HeaderRightA to="/login"> {/* 로그인 페이지로 이동 */}
+            <HeaderRightA onClick={movingLogin}> {/* 로그인 페이지로 이동 */}
               로그인
+             
             </HeaderRightA>
             <HeaderRightA>
               <img src={mystore} alt="mystore" />
               내상점
             </HeaderRightA>
-            <HeaderRightA>
+            <HeaderRightA onClick={AddProduct}>
               <img src={sell} alt="mystore" />
               판매하기
             </HeaderRightA>

@@ -2,6 +2,8 @@ import React, {useCallback} from 'react'
 
 import styled from "styled-components";
 
+import { useNavigate } from "react-router-dom";
+import SignUp from './SignUp';
 
 
 
@@ -21,7 +23,10 @@ const Login = () => {
       
 
     }
-
+    const navigate = useNavigate();
+    const movingSignUp = () => {
+      navigate("/SignUp");
+    };
 
     return (
         <div>
@@ -45,7 +50,7 @@ const Login = () => {
                         </div>
                     </div>
                         <LoginBtn onClick={LogIn}>로그인</LoginBtn>
-                        <SignBtn>회원가입 하러가기</SignBtn>
+                        <SignBtn onClick={movingSignUp}>회원가입 하러가기</SignBtn>
                     </ContentContainer>
             </LoginContainer>
         </div>
