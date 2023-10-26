@@ -67,6 +67,7 @@
 .category-list a:hover {
   background-color: red;
   color: white;
+  display: inline-block;
 }
 
 .category-list li:hover .hidden-menu {
