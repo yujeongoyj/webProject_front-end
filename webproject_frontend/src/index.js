@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import AddProduct from './Projecet_1/pages/AddProduct';
 import Login from './Projecet_1/pages/Login';
 import ProductDetail from './Projecet_1/productdetail/ProductDetail';
+import ProductDescription from './Projecet_1/productdetail/ProductDescription';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

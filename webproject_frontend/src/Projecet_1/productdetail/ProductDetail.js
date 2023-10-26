@@ -11,12 +11,15 @@ import minitime from "../image/minitime.png";
 import redheart from "../image/redheart.svg";
 import whiteheart from "../image/whiteheart.svg";
 import { useParams } from 'react-router-dom';
+import Footer from '../Foofer/Footer';
 
 const ProductDetail = (props) => {
   
  // const { id, image, productName, description, Price} = props.data;
 
   return (
+    <div>
+    <Header />
     <div style={{width:"1024px", height:"490px", margin:"0 auto"}}>
       <div className='productDetail'>
         <div className='card'>
@@ -64,6 +67,10 @@ const ProductDetail = (props) => {
             </div>
           </div>
         </div>
+    </div>
+    <div>
+      <Footer/>
+    </div>
     </div>
   )
 }
