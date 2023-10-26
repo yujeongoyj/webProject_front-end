@@ -13,7 +13,6 @@ function App() {
     <Router>
       <div className="App">
         <Header />
-        {/* Use Routes component and nest Route components inside it */}
         <Routes>
           <Route path='/' element={<Home/>} />
           <Route path="/maleClothing" element={<MaleClothing />} />
