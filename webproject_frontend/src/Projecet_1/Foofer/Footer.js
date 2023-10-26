@@ -2,19 +2,13 @@
 
 import React from 'react';
 import styled from "styled-components";
-<<<<<<< HEAD
-import logo from "../images/logo.png";
-import notion from "../images/notion.png";
-import blog from "../images/blog.png";
-import facebook from "../images/facebook.png";
-import instagram from "../images/instagram.png";
-=======
+
 import logo from "../image/logo.png";
 import notion from "../image/notion.png";
 import blog from "../image/blog.png";
 import facebook from "../image/facebook.png";
 import instagram from "../image/instagram.png";
->>>>>>> main
+
 
 const Footer = () => {
     return (

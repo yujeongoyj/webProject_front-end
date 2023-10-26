@@ -1,9 +1,7 @@
 import React from "react";
 import './Middle.css';
-import '../components/Button';
 import styled from "styled-components";
 import AddProduct from '../pages/AddProduct'
-import Button from "../components/Button";
 import prev from "../images/next.png";
 import next from "../images/prev.png";
 import Slick from "react-slick";

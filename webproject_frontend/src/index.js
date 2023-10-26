@@ -10,7 +10,7 @@ import SignUp from './Projecet_1/pages/SignUp';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <SignUp />
+    <App />
   </React.StrictMode>
 );
 
