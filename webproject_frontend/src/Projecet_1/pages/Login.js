@@ -22,42 +22,6 @@ const Login = () => {
 
     }
 
-    const SignUp = () => {
-        <div>
-        <div>
-            <LoginContainer>
-                <ContentsContainer>
-                    <MainName>
-                        {/* <img style={{width:"30px", height:"38px", marginRight:"8px"}} src={thunderlogo}/> */}
-                        <TextMain>번개장터 회원가입</TextMain>
-                    </MainName>
-                    <div>
-                        <TextSub>ID/PW/이메일을 모두 입력해주세요!</TextSub>
-                    </div>
-                    <div>
-                        <div>
-                            <IDPW>ID</IDPW>
-                            <Input placeholder="아이디를 입력해주세요!" type="text" value={username} />
-                        </div>
-                        <div>
-                            <IDPW>E-MAIL</IDPW>
-                            <Input placeholder="이메일을 입력해주세요!" type="text" />
-                        </div>
-                        <div>
-                            <IDPW>패스워드</IDPW>
-                            <Input placeholder="비밀번호를 입력해주세요!" type="password" value={pwd} />
-                        </div>
-                        <div>
-                            <IDPW>패스워드 재확인</IDPW>
-                            <Input placeholder="비밀번호를 다시 입력해주세요!" type="password" />
-                        </div>
-                    </div>
-                    <LoginBtn>회원가입</LoginBtn>
-                </ContentsContainer>
-            </LoginContainer>
-        </div>
-    </div>
-    };
 
     return (
         <div>
@@ -81,7 +45,7 @@ const Login = () => {
                         </div>
                     </div>
                         <LoginBtn onClick={LogIn}>로그인</LoginBtn>
-                        <SignBtn onClick={SignUp}>회원가입 하러가기</SignBtn>
+                        <SignBtn>회원가입 하러가기</SignBtn>
                     </ContentContainer>
             </LoginContainer>
         </div>

@@ -6,6 +6,8 @@ import sell from '../images/sell.png';
 import mystore from '../images/mystore.png';
 import styled from "styled-components";
 import  {useState} from 'react'
+import { Link } from "react-router-dom";
+import Login from '../pages/Login';
 
 
 
@@ -14,48 +16,44 @@ function Header() {
 
 
   return (
-      <MainHeader>
-        <MainHeaderContainer>
-          <MainHeaderTop>
-            <LogoA>
+    <MainHeader>
+      <MainHeaderContainer>
+        <MainHeaderTop>
+          <LogoA>
             <img className="header_logo" src="https://www.daelim.ac.kr/type/KOR_A/img/intro/logo.png"/>
-              {/* <img alt="logo" /> */}
-            </LogoA>
-            <MainHeaderMiddle>
-              <MainHeaderMiddleContainer>
-                <input type="text" 
-                placeholder="물품을 검색해보세요" 
-                />
-                <SearchA>
-                  <img src={search} alt="search"/>
-                </SearchA>
-              </MainHeaderMiddleContainer>
-            </MainHeaderMiddle>
-            <MainHeaderRight>
-              <HeaderRightA>
-                로그인
-              </HeaderRightA>
-              <HeaderRightA>
+          </LogoA>
+          <MainHeaderMiddle>
+            <MainHeaderMiddleContainer>
+              <input type="text" placeholder="물품을 검색해보세요" />
+              <SearchA>
+                <img src={search} alt="search" />
+              </SearchA>
+            </MainHeaderMiddleContainer>
+          </MainHeaderMiddle>
+          <MainHeaderRight>
+            <HeaderRightA to="/login"> {/* 로그인 페이지로 이동 */}
+              로그인
+            </HeaderRightA>
+            <HeaderRightA>
               <img src={mystore} alt="mystore" />
-                내상점
-              </HeaderRightA>
-              <HeaderRightA>
+              내상점
+            </HeaderRightA>
+            <HeaderRightA>
               <img src={sell} alt="mystore" />
-                판매하기
-              </HeaderRightA>
-            </MainHeaderRight>
-          </MainHeaderTop>
+              판매하기
+            </HeaderRightA>
+          </MainHeaderRight>
+        </MainHeaderTop>
         <MainHeaderBottom>
-                <Hambuger>
-                    <img src={hbg} alt="menu"/>
-                </Hambuger>
-                <SellerInfoA>
-                    <b>ReUseIt</b>
-                    {/* <img  alt="arrowRight"/> */}
-                </SellerInfoA>
+          <Hambuger>
+            <img src={hbg} alt="menu" />
+          </Hambuger>
+          <SellerInfoA>
+            <b>ReUseIt</b>
+          </SellerInfoA>
         </MainHeaderBottom>
-        </MainHeaderContainer>
-      </MainHeader>
+      </MainHeaderContainer>
+    </MainHeader>
   );
 };
 
