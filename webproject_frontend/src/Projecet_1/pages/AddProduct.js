@@ -11,8 +11,11 @@ const AddProduct = (props) => {
     const [products, setProducts] = useState([]);
     const [image, setImage] = React.useState("");
 
-    const onChangeimage = useCallback((e) => setImage(e.target.value),[]);
-
+    const onChangeImage = useCallback((e) => setImage(e.target.value),[]);
+    // const onChangeImage = (e) => {
+    //     const selectedImage = e.target.files[0];
+    //     setImage(selectedImage);
+    // }
     const handleProductNameChange = (e) => {
         setProductName(e.target.value);
     };
@@ -51,7 +54,7 @@ const AddProduct = (props) => {
                                 <img style={{width:"25px", height:"25px"}}  alt="카메라티콘"/>
                                 <span>이미지 등록</span>
                             </div>
-                            <input type="file" onChange={onChangeimage} value={image}/>
+                            <input type="file" onChange={onChangeImage} value={image}/>
                         </Imageupload>
                         <ImageText>
                             <p><b>* 상품 이미지는 640x640에 최적화 되어 있습니다.</b></p>
@@ -173,7 +176,7 @@ const AddProduct = (props) => {
         </Container>
         </div>
     )
-}
+};
 
 const Container = styled.div`
     width:100%;
@@ -518,6 +521,7 @@ const CountRight = styled.div`
     input::-webkit-inner-spin-button {
         -webkit-appearance: none;
         margin: 0;
+    }
 `;
 
 const Btnarea = styled.div`
