@@ -14,7 +14,7 @@ const Sho = () => {
     axios.get(apiUrl)
       .then(response => {
         const productsWithImages = response.data
-          .filter(productData => productData.products.category === 2) // Filter products with category 숫자 값
+          .filter(productData => productData.products.category === 3) // Filter products with category 숫자 값
           .map(productData => ({
             ...productData,
             image: `data:image/png;base64, ${productData.image}`
@@ -43,7 +43,7 @@ const Sho = () => {
 
   return (
     <div className="bottom">
-      <h1 className="bottom_list_title">여성의류</h1>
+      <h1 className="bottom_list_title">신발 추천제품</h1>
       <div className="card_product">
         {products.map(productData => (
           <div className="custom-product-wrapper" key={productData.products.id}>

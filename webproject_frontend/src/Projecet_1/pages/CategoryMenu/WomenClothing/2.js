@@ -43,7 +43,7 @@ const WomenClothing = () => {
 
   return (
     <div className="bottom">
-      <h1 className="bottom_list_title">여성의류</h1>
+      <h1 className="bottom_list_title">여성의류 추천제품</h1>
       <div className="card_product">
         {products.map(productData => (
           <div className="custom-product-wrapper" key={productData.products.id}>

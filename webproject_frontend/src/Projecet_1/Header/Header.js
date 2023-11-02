@@ -122,6 +122,142 @@ function Header() {
           },
         ]
       },
+
+      {
+        name: {
+            ko: '디지털',
+            en: '5'
+        },
+        subMenu: [
+          {
+            ko: '휴대폰',
+            en: 'womenbag'
+          },
+          {
+            ko: '태블릿',
+            en: 'menbag'
+          },
+          {
+            ko: '웨어러블',
+            en: 'travelbag'
+          },
+          {
+            ko: '오디오/영상기기',
+            en: 'clothing'
+          },
+          {
+            ko: 'pc/노트북',
+            en: 'ab'
+          },
+          {
+            ko: '게임/타이틀',
+            en: 'ab'
+          },
+        ]
+      },
+
+      {
+        name: {
+            ko: '생활/주방용품',
+            en: '6'
+        },
+        subMenu: [
+          {
+            ko: '주방욕품',
+            en: 'womenbag'
+          },
+          {
+            ko: '욕실용품',
+            en: 'menbag'
+          },
+          {
+            ko: '생활용품',
+            en: 'travelbag'
+          },
+        ]
+      },
+      {
+        name: {
+            ko: '도서/티켓/문구',
+            en: '7'
+        },
+        subMenu: [
+          {
+            ko: '도서',
+            en: 'womenbag'
+          },
+          {
+            ko: '문구',
+            en: 'menbag'
+          },
+          {
+            ko: '기프티콘/쿠폰',
+            en: 'travelbag'
+          },
+          {
+            ko: '상품권',
+            en: 'travelbag'
+          },
+          {
+            ko: '티켓',
+            en: 'travelbag'
+          },
+        ]
+      },
+
+      {
+        name: {
+            ko: '시계',
+            en: '8'
+        },
+        subMenu: [
+          {
+            ko: '남성시계',
+            en: 'womenbag'
+          },
+          {
+            ko: '여성시계',
+            en: 'menbag'
+          },
+          {
+            ko: '시계용품',
+            en: 'travelbag'
+          },
+        ]
+      },
+      
+      {
+        name: {
+            ko: '쥬얼리',
+            en: '9'
+        },
+        subMenu: [
+          {
+            ko: '귀걸이/피어싱',
+            en: 'womenbag'
+          },
+          {
+            ko: '목걸이/펜던트',
+            en: 'menbag'
+          },
+          {
+            ko: '팔찌',
+            en: 'travelbag'
+          },
+          {
+            ko: '발찌',
+            en: 'travelbag'
+          },
+          {
+            ko: '반지',
+            en: 'travelbag'
+          },
+          {
+            ko: '쥬얼리세트',
+            en: 'travelbag'
+          },
+        ]
+      },
   ];
 
   const handleCategoryMouseEnter = () => {

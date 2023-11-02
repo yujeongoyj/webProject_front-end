@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Loading from '../Product/Loading';
-import './Product.css';
+import Loading from '../../../Product/Loading';
+import './6.css';
 
-const Bottom = () => {
+const Dailykitchenutensils = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [products, setProducts] = useState([]);
@@ -13,10 +13,12 @@ const Bottom = () => {
 
     axios.get(apiUrl)
       .then(response => {
-        const productsWithImages = response.data.map(productData => ({
-          ...productData,
-          image: `data:image/png;base64, ${productData.image}`
-        }));
+        const productsWithImages = response.data
+          .filter(productData => productData.products.category === 6) // Filter products with id === 1
+          .map(productData => ({
+            ...productData,
+            image: `data:image/png;base64, ${productData.image}`
+          }));
         setProducts(productsWithImages);
         setLoading(false);
       })
@@ -41,7 +43,9 @@ const Bottom = () => {
 
   return (
     <div className="bottom">
-      <h1 className="bottom_list_title">중고거래 매물</h1>
+      <div className="bottom_title">
+      <h1 className="list_title">생활/주방용품</h1>
+      </div>
       <div className="card_product">
         {products.map(productData => (
           <div className="custom-product-wrapper" key={productData.products.id}>
@@ -56,14 +60,14 @@ const Bottom = () => {
               <div className="card_desc">
                 <h2 className="card_title">{productData.products.productName}</h2>
                 <p className="card_description">{productData.products.description}</p>
-                <div className="card_price">{productData.products.price}원</div>
+                <div className="card_price">{productData.products.price}</div>
               </div>
             </div>
           </div>
         ))}
-      </div>  
+      </div>
     </div>
   );
 };
 
-export default Bottom;
+export default Dailykitchenutensils;

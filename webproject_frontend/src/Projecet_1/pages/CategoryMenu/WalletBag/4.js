@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Loading from '../Product/Loading';
-import './Product.css';
+import Loading from '../../../Product/Loading';
+import './4.css';
 
-const Bottom = () => {
+const WalletBag = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [products, setProducts] = useState([]);
@@ -13,10 +13,12 @@ const Bottom = () => {
 
     axios.get(apiUrl)
       .then(response => {
-        const productsWithImages = response.data.map(productData => ({
-          ...productData,
-          image: `data:image/png;base64, ${productData.image}`
-        }));
+        const productsWithImages = response.data
+          .filter(productData => productData.products.category === 4) // Filter products with category 숫자 값
+          .map(productData => ({
+            ...productData,
+            image: `data:image/png;base64, ${productData.image}`
+          }));
         setProducts(productsWithImages);
         setLoading(false);
       })
@@ -41,7 +43,7 @@ const Bottom = () => {
 
   return (
     <div className="bottom">
-      <h1 className="bottom_list_title">중고거래 매물</h1>
+      <h1 className="bottom_list_title">가방/지갑 제품 추천</h1>
       <div className="card_product">
         {products.map(productData => (
           <div className="custom-product-wrapper" key={productData.products.id}>
@@ -56,14 +58,14 @@ const Bottom = () => {
               <div className="card_desc">
                 <h2 className="card_title">{productData.products.productName}</h2>
                 <p className="card_description">{productData.products.description}</p>
-                <div className="card_price">{productData.products.price}원</div>
+                <div className="card_price">{productData.products.price}</div>
               </div>
             </div>
           </div>
         ))}
-      </div>  
+      </div>
     </div>
   );
 };
 
-export default Bottom;
+export default WalletBag;
