@@ -1,13 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Header from '../Header/Header';
 import './AddProduct.css';
 import styled from "styled-components";
+
 
 
 const AddProduct = (props) => {
     const [productName, setProductName] = useState('');
     const [productPrice, setProductPrice] = useState('');
     const [products, setProducts] = useState([]);
+    const [image, setImage] = React.useState("");
+
+    const onChangeimage = useCallback((e) => setImage(e.target.value),[]);
 
     const handleProductNameChange = (e) => {
         setProductName(e.target.value);
@@ -47,7 +51,7 @@ const AddProduct = (props) => {
                                 <img style={{width:"25px", height:"25px"}}  alt="카메라티콘"/>
                                 <span>이미지 등록</span>
                             </div>
-                            <input type="file" />
+                            <input type="file" onChange={onChangeimage} value={image}/>
                         </Imageupload>
                         <ImageText>
                             <p><b>* 상품 이미지는 640x640에 최적화 되어 있습니다.</b></p>
@@ -534,7 +538,7 @@ const Btnarea = styled.div`
         font-size: 20px;
         font-weight: 700;
         border-radius: 2px;
-        background: rgb(255, 80, 88);
+        background: rgb(96, 174, 232);
         position: relative;
     }
 `;

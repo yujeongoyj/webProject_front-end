@@ -18,7 +18,9 @@ function Header() {
   const movingLogin = () => {
     navigate("/login");
   };
-
+  const movingMain = () => {
+    navigate("/");
+  };
   const AddProduct = () => {
     navigate("/AddProduct");
   };
@@ -28,7 +30,7 @@ function Header() {
     <MainHeader>
       <MainHeaderContainer>
         <MainHeaderTop>
-          <LogoA>
+          <LogoA onClick={movingMain}>
             <img className="header_logo" src="https://www.daelim.ac.kr/type/KOR_A/img/intro/logo.png"/>
           </LogoA>
           <MainHeaderMiddle>
@@ -42,7 +44,7 @@ function Header() {
           <MainHeaderRight>
             <HeaderRightA onClick={movingLogin}> {/* 로그인 페이지로 이동 */}
               로그인
-             
+          
             </HeaderRightA>
             <HeaderRightA>
               <img src={mystore} alt="mystore" />
