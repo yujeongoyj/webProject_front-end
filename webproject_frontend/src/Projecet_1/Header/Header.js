@@ -19,7 +19,7 @@ function Header() {
     {
         name: {
             ko: '남자의류',
-            en: 'maleClothing'
+            en: '1'
         },
         subMenu: [
           {
@@ -28,7 +28,7 @@ function Header() {
           },
           {
             ko: '상의',
-            en: 'ab'
+            en: 'mantop'
           },
         ]
       },
@@ -36,7 +36,7 @@ function Header() {
       {
         name: {
             ko: '여자의류',
-            en: 'maleClothing'
+            en: '2'
         },
         subMenu: [
           {
@@ -45,7 +45,7 @@ function Header() {
           },
           {
             ko: '상의',
-            en: 'ab'
+            en: 'womenop'
           },
         ]
       },
@@ -53,7 +53,7 @@ function Header() {
       {
         name: {
             ko: '신발',
-            en: 'maleClothing'
+            en: '3'
         },
         subMenu: [
           {
@@ -62,15 +62,15 @@ function Header() {
           },
           {
             ko: '남성화',
-            en: 'ab'
+            en: 'manshoes'
           },
           {
             ko: '여성화',
-            en: 'ab'
+            en: 'womenshoes'
           },
           {
             ko: '스포츠화',
-            en: 'ab'
+            en: 'sportsshoes'
           },
         ]
       },
@@ -78,20 +78,20 @@ function Header() {
       {
         name: {
             ko: '가방/지갑',
-            en: 'maleClothing'
+            en: '4'
         },
         subMenu: [
           {
             ko: '여성가방',
-            en: 'clothing'
+            en: 'womenbag'
           },
           {
             ko: '남성가방',
-            en: 'ab'
+            en: 'menbag'
           },
           {
             ko: '여행용가방',
-            en: 'ab'
+            en: 'travelbag'
           },
           {
             ko: '여성지갑',
@@ -105,22 +105,37 @@ function Header() {
             ko: '기타지갑',
             en: 'ab'
           },
-          // 나머지 서브 메뉴 항목들
         ]
       },
   ];
 
   const handleCategoryMouseEnter = () => {
     setCategoryHovered(true);
+    setTimeout(() => {
+      setSubMenuVisible(true);
+    }, 1000);
+  };
+  
+  const handleCategoryMouseLeave = () => {
+    setCategoryHovered(false);
+    // 마우스가 메뉴를 떠난 후 서브 메뉴를 숨깁니다.
+    setTimeout(() => {
+      setSubMenuVisible(false);
+    }, 200);
+  };
+  
+  const handleSubMenuMouseEnter = () => {
+    // SubMenu에 마우스가 들어왔을 때도 메뉴를 유지시킵니다.
+    setCategoryHovered(true);
     setSubMenuVisible(true);
   };
-
-  const handleCategoryMouseLeave = () => {
+  
+  const handleSubMenuMouseLeave = () => {
+    // SubMenu를 떠나면 메뉴를 숨깁니다.
     setCategoryHovered(false);
     setSubMenuVisible(false);
   };
-
-
+  
   return (
       <MainHeader>
         <MainHeaderContainer>
@@ -160,10 +175,13 @@ function Header() {
                   <img src={hbg} alt="메뉴" className="category-label"/>
                     {isCategoryHovered && (
                       <ul className="category-list">
+                        <li className="category-all">
+                          전체메뉴
+                        </li>
                         {categories.map((category, index) => (
                           <li key={index}>
                         {category.name && category.name.ko && (
-                          <NavLink to={`/${category.name.en.toLowerCase()}`} activeClassName="active">
+                          <NavLink to={`/${category.name.en.toLowerCase()}`} activeClassName="active_main">
                             {category.name.ko}
                           </NavLink>
                         )}
@@ -173,7 +191,7 @@ function Header() {
                         <NavLink
                           key={subIndex}
                           to={`/${subMenuItem.en.toLowerCase()}`} // 서브 메뉴 항목의 영문 이름으로 경로 생성
-                          activeClassName="active"
+                          activeClassName="active_sub"
                         >
                           {subMenuItem.ko}
                           </NavLink>

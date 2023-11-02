@@ -1,6 +1,23 @@
+/* .category {
+  top: calc(100% + 28px);
+  left: 0px;
+  border-left: 1px solid rgb(238, 238, 238);
+  z-index: 10;
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+  background: rgb(255, 255, 255);
+} */
+
+
+
 .category-menu {
   position: relative;
   display: inline-block;
+  text-align: center;
+  /* top: calc(100% + 28px); */
+  /* left: 0px; */
 }
 
 .category-label {
@@ -11,7 +28,6 @@
 .category-list {
   list-style: none;
   position: absolute;
-  left: 0;
   display: none;
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -23,7 +39,9 @@
 
 .category-list li {
   position: relative;
-  margin: 10px 5px 5px;
+  /* margin: 10px 5px 5px; */
+  text-align: center;
+  margin: 10px 5px;
 }
 
 .category-list a {
@@ -40,16 +58,15 @@
 
 .hidden-menu {
   position: absolute;
-  top: 0;
-  left: 104%;
+  left: 102%;
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: none;
-  width: 160px;
+  width: 120px;
   padding: 5px;
-  text-align: left;
+  text-align: center;
   border: 1px solid #ccc;
-  font-size: 15px;
+  padding: 20px 0px 25px;
 }
 
 .hidden-menu a {
@@ -68,6 +85,7 @@
   background-color: red;
   color: white;
   display: inline-block;
+  width: max-content;
 }
 
 .category-list li:hover .hidden-menu {
@@ -82,3 +100,58 @@
   display: block;
 }
 
+
+.category-all {
+    height: 40px;
+    display: flex;
+    padding: 0px 30px;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(238, 238, 238);
+    font-weight: 700;  
+}
+
+/* .category-list {
+    height: calc(100% - 40px);
+    border-right: 1px solid rgb(238, 238, 238);
+    border-bottom: 1px solid rgb(238, 238, 238);
+    padding: 20px 0px 25px;
+    overflow-y: auto;
+} */
+
+/* .active {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  padding: 0px 30px;
+  height: 30px;
+} */
+
+.active_main {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  padding: 0px 30px;
+  height: 30px;
+  background: rgb(246, 68, 72);
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+
+.active_sub {
+  display: inline-block;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 20px 0px 25px;
+
+  border-right: 1px solid rgb(238, 238, 238);
+  border-bottom: 1px solid rgb(238, 238, 238);
+}
+
+.category-menu:hover .category-list a:hover {
+  color: red;
+}
+
+.category-list a:hover {
+  background-color: white;
+}
