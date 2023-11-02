@@ -56,7 +56,7 @@ const Bottom = () => {
               <div className="card_desc">
                 <h2 className="card_title">{productData.products.productName}</h2>
                 <p className="card_description">{productData.products.description}</p>
-                <div className="card_price">{productData.products.price}</div>
+                <div className="card_price">{productData.products.price}원</div>
               </div>
             </div>
           </div>

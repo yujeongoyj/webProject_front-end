@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Loading from '../../Product/Loading';
+import './1.css';
 
 const MaleClothing = () => {
   const [loading, setLoading] = useState(true);
@@ -42,7 +43,9 @@ const MaleClothing = () => {
 
   return (
     <div className="bottom">
-      <h1 className="bottom_list_title">남자의류</h1>
+      <div className="bottom_title">
+      <h1 className="list_title">남자의류 추천제품</h1>
+      </div>
       <div className="card_product">
         {products.map(productData => (
           <div className="custom-product-wrapper" key={productData.products.id}>
