@@ -9,6 +9,8 @@ import  {useState} from 'react'
 import { Link } from "react-router-dom";
 import Login from '../pages/Login';
 import { useNavigate } from "react-router-dom";
+import { NavLink } from 'react-router-dom'; // NavLink import 추가
+import './CategoryMenu.css';
 
 
 
@@ -25,6 +27,130 @@ function Header() {
     navigate("/AddProduct");
   };
 
+  const [isCategoryHovered, setCategoryHovered] = useState(false);  
+  const [isSubMenuVisible, setSubMenuVisible] = useState(false);
+
+  const categories = [
+    {
+        name: {
+            ko: '남자의류',
+            en: '1'
+        },
+        subMenu: [
+          {
+            ko: '의류',
+            en: 'clothing'
+          },
+          {
+            ko: '상의',
+            en: 'mantop'
+          },
+        ]
+      },
+
+      {
+        name: {
+            ko: '여자의류',
+            en: '2'
+        },
+        subMenu: [
+          {
+            ko: '의류',
+            en: 'clothing'
+          },
+          {
+            ko: '상의',
+            en: 'womenop'
+          },
+        ]
+      },
+
+      {
+        name: {
+            ko: '신발',
+            en: '3'
+        },
+        subMenu: [
+          {
+            ko: '스니커즈',
+            en: 'clothing'
+          },
+          {
+            ko: '남성화',
+            en: 'manshoes'
+          },
+          {
+            ko: '여성화',
+            en: 'womenshoes'
+          },
+          {
+            ko: '스포츠화',
+            en: 'sportsshoes'
+          },
+        ]
+      },
+
+      {
+        name: {
+            ko: '가방/지갑',
+            en: '4'
+        },
+        subMenu: [
+          {
+            ko: '여성가방',
+            en: 'womenbag'
+          },
+          {
+            ko: '남성가방',
+            en: 'menbag'
+          },
+          {
+            ko: '여행용가방',
+            en: 'travelbag'
+          },
+          {
+            ko: '여성지갑',
+            en: 'clothing'
+          },
+          {
+            ko: '남성지갑',
+            en: 'ab'
+          },
+          {
+            ko: '기타지갑',
+            en: 'ab'
+          },
+        ]
+      },
+  ];
+
+  const handleCategoryMouseEnter = () => {
+    setCategoryHovered(true);
+    setTimeout(() => {
+      setSubMenuVisible(true);
+    }, 1000);
+  };
+  
+  const handleCategoryMouseLeave = () => {
+    setCategoryHovered(false);
+    // 마우스가 메뉴를 떠난 후 서브 메뉴를 숨깁니다.
+    setTimeout(() => {
+      setSubMenuVisible(false);
+    }, 200);
+  };
+  
+  const handleSubMenuMouseEnter = () => {
+    // SubMenu에 마우스가 들어왔을 때도 메뉴를 유지시킵니다.
+    setCategoryHovered(true);
+    setSubMenuVisible(true);
+  };
+  
+  const handleSubMenuMouseLeave = () => {
+    // SubMenu를 떠나면 메뉴를 숨깁니다.
+    setCategoryHovered(false);
+    setSubMenuVisible(false);
+  };
+  
 
   return (
     <MainHeader>
@@ -57,15 +183,47 @@ function Header() {
           </MainHeaderRight>
         </MainHeaderTop>
         <MainHeaderBottom>
-          <Hambuger>
-            <img src={hbg} alt="menu" />
-          </Hambuger>
-          <SellerInfoA>
-            <b>ReUseIt</b>
-          </SellerInfoA>
+        <Hambuger>
+                <div className="category-menu" onMouseEnter={handleCategoryMouseEnter} onMouseLeave={handleCategoryMouseLeave}>
+                  <img src={hbg} alt="메뉴" className="category-label"/>
+                    {isCategoryHovered && (
+                      <ul className="category-list">
+                        <li className="category-all">
+                          전체메뉴
+                        </li>
+                        {categories.map((category, index) => (
+                          <li key={index}>
+                        {category.name && category.name.ko && (
+                          <NavLink to={`/${category.name.en.toLowerCase()}`} activeClassName="active_main">
+                            {category.name.ko}
+                          </NavLink>
+                        )}
+                    {isSubMenuVisible && category.subMenu && (
+                    <div className="hidden-menu">
+                      {category.subMenu.map((subMenuItem, subIndex) => (
+                        <NavLink
+                          key={subIndex}
+                          to={`/${subMenuItem.en.toLowerCase()}`} // 서브 메뉴 항목의 영문 이름으로 경로 생성
+                          activeClassName="active_sub"
+                        >
+                          {subMenuItem.ko}
+                          </NavLink>
+                        ))}
+                    </div>
+                    )}
+                </li>
+              ))}
+          </ul>
+          )}
+          </div>          
+                </Hambuger>
+                <SellerInfoA>
+                    <b>ReUseIt</b>
+                    {/* <img  alt="arrowRight"/> */}
+                </SellerInfoA>
         </MainHeaderBottom>
-      </MainHeaderContainer>
-    </MainHeader>
+        </MainHeaderContainer>
+      </MainHeader>
   );
 };
 

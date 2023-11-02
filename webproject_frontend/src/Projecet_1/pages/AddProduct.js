@@ -29,13 +29,13 @@ const AddProduct = (props) => {
         setProductPrice('');
     };
 
+    
+
 
 
     return (
         <div>
-             <Header></Header>
-       
-       
+         
         <Container>
             <AddContainer>
                 <BasicInfo>

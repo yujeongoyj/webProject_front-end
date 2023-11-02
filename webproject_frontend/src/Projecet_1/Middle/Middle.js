@@ -1,34 +1,18 @@
 import React from "react";
 import './Middle.css';
+
+import '../components/Button';
 import styled from "styled-components";
 import AddProduct from '../pages/AddProduct'
-import prev from "../images/next.png";
-import next from "../images/prev.png";
+import Button from "../components/Button";
+import prev from "../../Projecet_1/image/next.png";
+import next from "../../Projecet_1/image/prev.png";
 import Slick from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 
 function Middle() {
-    // return(
-    //     <div className="middle">
-    //         <div className="middlebox">
-    //                 <h1 className="cover_title">
-    //                     믿을만한
-    //                     <br/>
-    //                     이웃 간 중고거래
-    //                 </h1>
-    //                 <span className="cover_description">
-    //                     동네 주민들과 가깝고 따뜻한 거래를 
-    //                     <br/>
-    //                     지금 경험해보세요.
-    //                 </span>
-    //                 <Button></Button>
-    //             </div>
-                
-    //     </div>
-    // );
-
 
     function SamplePrevArrow(props) {
         const { className, style, onClick } = props;
