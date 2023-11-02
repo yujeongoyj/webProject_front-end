@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Loading from '../../Product/Loading';
+import Loading from '../../../Product/Loading';
+import './2.css';
 
 const WomenClothing = () => {
   const [loading, setLoading] = useState(true);

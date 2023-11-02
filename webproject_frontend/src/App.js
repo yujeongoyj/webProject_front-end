@@ -4,11 +4,11 @@ import Header from './Projecet_1/Header/Header';
 import Middle from './Projecet_1/Middle/Middle';
 import Bottom from './Projecet_1/Bottom/Bottom';
 import Footer from './Projecet_1/Foofer/Footer';
-import MaleClothing from './Projecet_1/pages/MaleClothingPage/1';
+import MaleClothing from './Projecet_1/pages/CategoryMenu/MaleClothingPage/1';
 import Clothing from './Projecet_1/pages/Clothing/clothing';
 import Home from './Projecet_1/pages/Home/Home';
-import WomenClothing from './Projecet_1/pages/WomenClothing/2';
-import Sho from './Projecet_1/pages/sho/3';
+import WomenClothing from './Projecet_1/pages/CategoryMenu/WomenClothing/2';
+import Sho from './Projecet_1/pages/CategoryMenu/sho/3';
 
 
 function App() {

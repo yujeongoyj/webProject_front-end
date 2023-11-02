@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Loading from '../../Product/Loading';
+import Loading from '../../../Product/Loading';
 import './1.css';
 
 const MaleClothing = () => {
