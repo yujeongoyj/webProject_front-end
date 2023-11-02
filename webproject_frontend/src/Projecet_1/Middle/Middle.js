@@ -1,5 +1,6 @@
 import React from "react";
 import './Middle.css';
+
 import '../components/Button';
 import styled from "styled-components";
 import AddProduct from '../pages/AddProduct'
@@ -12,6 +13,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 
 function Middle() {
+
     function SamplePrevArrow(props) {
         const { className, style, onClick } = props;
         return (

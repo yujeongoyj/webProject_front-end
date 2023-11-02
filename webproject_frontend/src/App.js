@@ -1,4 +1,9 @@
 import React from 'react';
+
+import Login from './Projecet_1/pages/Login';
+import MainPage from './Projecet_1/pages/MainPage';
+import SignUp from './Projecet_1/pages/SignUp';
+import AddProduct from './Projecet_1/pages/AddProduct';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Import Routes from react-router-dom
 import Header from './Projecet_1/Header/Header';
 import Middle from './Projecet_1/Middle/Middle';
@@ -15,9 +20,13 @@ function App() {
   return (
     <Router>
       <div className="App">
+       
         <Header />
         <Routes>
           <Route path='/' element={<Home/>} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/SignUp" element={<SignUp/>} />
+          <Route path="/AddProduct" element={<AddProduct/>} />
           <Route path="/1" element={<MaleClothing />} />
           <Route path="/2" element={<WomenClothing/>} />
           <Route path="/3" element={<Sho/>} />

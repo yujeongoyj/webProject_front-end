@@ -1,16 +1,31 @@
-import React, { useState } from "react";
-import { NavLink } from 'react-router-dom'; // NavLink import 추가
+import React from "react";
 import './Header.css';
-import './CategoryMenu.css'
-import hbg from '../../Projecet_1/image/hbg.png';
-
-import search from '../../Projecet_1/image/search.png';
-import sell from '../../Projecet_1/image/sell.png';
-import mystore from '../../Projecet_1/image/mystore.png';
-import login from '../../Projecet_1/image/login.png';
+import hbg from '../images/hbg.png';
+import search from '../images/search.png';
+import sell from '../images/sell.png';
+import mystore from '../images/mystore.png';
 import styled from "styled-components";
+import  {useState} from 'react'
+import { Link } from "react-router-dom";
+import Login from '../pages/Login';
+import { useNavigate } from "react-router-dom";
+import { NavLink } from 'react-router-dom'; // NavLink import 추가
+import './CategoryMenu.css';
+
+
 
 function Header() {
+  const navigate = useNavigate();
+
+  const movingLogin = () => {
+    navigate("/login");
+  };
+  const movingMain = () => {
+    navigate("/");
+  };
+  const AddProduct = () => {
+    navigate("/AddProduct");
+  };
 
   const [isCategoryHovered, setCategoryHovered] = useState(false);  
   const [isSubMenuVisible, setSubMenuVisible] = useState(false);
@@ -136,41 +151,39 @@ function Header() {
     setSubMenuVisible(false);
   };
   
+
   return (
-      <MainHeader>
-        <MainHeaderContainer>
-          <MainHeaderTop>
-            <LogoA>
+    <MainHeader>
+      <MainHeaderContainer>
+        <MainHeaderTop>
+          <LogoA onClick={movingMain}>
             <img className="header_logo" src="https://www.daelim.ac.kr/type/KOR_A/img/intro/logo.png"/>
-              {/* <img alt="logo" /> */}
-            </LogoA>
-            <MainHeaderMiddle>
-              <MainHeaderMiddleContainer>
-                <input type="text" 
-                placeholder="물품을 검색해보세요" 
-                />
-                <SearchA>
-                  <img src={search} alt="search"/>
-                </SearchA>
-              </MainHeaderMiddleContainer>
-            </MainHeaderMiddle>
-            <MainHeaderRight>
-              <HeaderRightA>
-              {/* <img src={login} alt="login" /> */}
-                로그인
-              </HeaderRightA>
-              <HeaderRightA>
+          </LogoA>
+          <MainHeaderMiddle>
+            <MainHeaderMiddleContainer>
+              <input type="text" placeholder="물품을 검색해보세요" />
+              <SearchA>
+                <img src={search} alt="search" />
+              </SearchA>
+            </MainHeaderMiddleContainer>
+          </MainHeaderMiddle>
+          <MainHeaderRight>
+            <HeaderRightA onClick={movingLogin}> {/* 로그인 페이지로 이동 */}
+              로그인
+          
+            </HeaderRightA>
+            <HeaderRightA>
               <img src={mystore} alt="mystore" />
-                내상점
-              </HeaderRightA>
-              <HeaderRightA>
+              내상점
+            </HeaderRightA>
+            <HeaderRightA onClick={AddProduct}>
               <img src={sell} alt="mystore" />
-                판매하기
-              </HeaderRightA>
-            </MainHeaderRight>
-          </MainHeaderTop>
+              판매하기
+            </HeaderRightA>
+          </MainHeaderRight>
+        </MainHeaderTop>
         <MainHeaderBottom>
-                <Hambuger>
+        <Hambuger>
                 <div className="category-menu" onMouseEnter={handleCategoryMouseEnter} onMouseLeave={handleCategoryMouseLeave}>
                   <img src={hbg} alt="메뉴" className="category-label"/>
                     {isCategoryHovered && (
@@ -213,7 +226,6 @@ function Header() {
       </MainHeader>
   );
 };
-
 
 const MainHeader = styled.div`
   position: sticky;
