@@ -11,15 +11,30 @@ import Login from '../pages/Login';
 import { useNavigate } from "react-router-dom";
 import { NavLink } from 'react-router-dom'; // NavLink import 추가
 import './CategoryMenu.css';
-
+import LoginModal from "../components/LoginModal";
 
 
 function Header() {
+
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const openModal = () => {
+      setModalOpen(true);
+      document.body.style.overflow = "hidden";
+  }
+
+  const closeModal = () => {
+      setModalOpen(false);
+      document.body.style.overflow = "unset";
+  }
+
+
   const navigate = useNavigate();
 
-  const movingLogin = () => {
-    navigate("/login");
-  };
+  // const movingLogin = () => {
+  //   navigate("/login");
+  // };
+
   const movingMain = () => {
     navigate("/");
   };
@@ -168,10 +183,9 @@ function Header() {
             </MainHeaderMiddleContainer>
           </MainHeaderMiddle>
           <MainHeaderRight>
-            <HeaderRightA onClick={movingLogin}> {/* 로그인 페이지로 이동 */}
-              로그인
+            <HeaderRightA onClick={openModal}>로그인</HeaderRightA>
+            <LoginModal open={modalOpen} close={closeModal}/>
           
-            </HeaderRightA>
             <HeaderRightA>
               <img src={mystore} alt="mystore" />
               내상점

@@ -9,7 +9,7 @@ const SignUp = () => {
             <LoginContainer>
                 <ContentsContainer>
                     <MainName>
-                        {/* <img style={{width:"30px", height:"38px", marginRight:"8px"}} src={thunderlogo}/> */}
+                       
                         <TextMain>ReUseIt 회원가입</TextMain>
                     </MainName>
                     <div>

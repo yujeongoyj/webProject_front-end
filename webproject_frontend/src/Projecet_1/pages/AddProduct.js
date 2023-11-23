@@ -170,7 +170,7 @@ const AddProduct = (props) => {
                 </Count> 
             </AddContainer>
             <Btnarea>
-                <button>등록하기</button>
+                <button>등록</button>
             </Btnarea>
 
         </Container>

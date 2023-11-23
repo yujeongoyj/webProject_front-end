@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import LoginModal from './Projecet_1/components/LoginModal';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
