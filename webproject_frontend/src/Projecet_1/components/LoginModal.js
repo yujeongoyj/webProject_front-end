@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
+import googleLogo from "../image/googlelogo.png";
 import xbutton from "../image/xbutton.png";
 import facebookColor from "../image/facebookColor.png";
 import navergreen from "../image/navergreen.png";
@@ -9,43 +10,53 @@ import { useNavigate } from "react-router-dom";
 
 const LoginModal = (props) => {
 
-    const {open, close} = props;
+    const { open, close } = props;
 
     const navigate = useNavigate();
     const MovingLogin = () => {
         navigate("/login");
-      };
-  
+    };
+
+    const handleSocialLogin = (provider) => {
+        // 백엔드에서 OAuth 인증 URL을 동적으로 생성하도록 수정
+        const oauthUrl = `http://localhost:8090/oauth2/authorization/${provider}`;
+        window.location.href = oauthUrl;
+    };
 
     return (
         <div>
-            { open? (
+            {open ? (
                 <Background>
                     <ModalContainer>
-                        <div style = {{paddingTop:"40px"}}>
-                        <CloseBtn><img onClick={close} style = {{width:"24px", height:"24px"}} src={xbutton} alt="닫기버튼"/></CloseBtn>
+                        <div style={{ paddingTop: "40px" }}>
+                            <CloseBtn><img onClick={close} style={{ width: "24px", height: "24px" }} src={xbutton} alt="닫기버튼" /></CloseBtn>
                         </div>
                         <div>
-                            
+
                             <MainText>ReUseIt으로 거래 시작하기</MainText>
                             <SubText>간편하게 가입하고 상품을 확인하세요</SubText>
                         </div>
                         <Btngroup>
-                            <SnsBtn onClick={()=>{window.alert("앗! 아직 준비중이에요!")}}><Img><img style={{width:"24px", height:"24px"}} src="chrome://new-tab-page/icons/google_logo.svg" alt="구글"/></Img>구글로 이동하기</SnsBtn>
-                            <SnsBtn onClick={()=>{window.alert("앗! 아직 준비중이에요!")}}><Img><img style={{width:"24px", height:"24px"}} src={facebookColor} alt="페이스북"/></Img>페이스북으로 이용하기</SnsBtn>
-                            <SnsBtn onClick={()=>{window.alert("앗! 아직 준비중이에요!")}}><Img><img style={{width:"24px", height:"24px"}} src={navergreen} alt="네이버"/></Img>네이버로 이용하기</SnsBtn>
+                            {/* <SnsBtn href="http://localhost:8090/oauth2/authorization/google"><Img><img style={{ width: "24px", height: "24px" }} alt="구글" src={googleLogo} /></Img>구글로 이동하기</SnsBtn>
+                            <SnsBtn href="http://localhost:8090/oauth2/authorization/facebook"><Img><img style={{ width: "24px", height: "24px" }} src={facebookColor} alt="페이스북" /></Img>페이스북으로 이용하기</SnsBtn>
+                            <SnsBtn href="http://localhost:8090/oauth2/authorization/naver"><Img><img style={{ width: "24px", height: "24px" }} src={navergreen} alt="네이버" /></Img>네이버로 이용하기</SnsBtn>
+                             */}
+                            <SnsBtn onClick={() => handleSocialLogin('google')}><Img><img style={{ width: "24px", height: "24px" }} alt="구글" src={googleLogo} /></Img>구글로 이동하기</SnsBtn>
+                            <SnsBtn onClick={() => handleSocialLogin('facebook')}><Img><img style={{ width: "24px", height: "24px" }} src={facebookColor} alt="페이스북" /></Img>페이스북으로 이용하기</SnsBtn>
+                            <SnsBtn onClick={() => handleSocialLogin('naver')}><Img><img style={{ width: "24px", height: "24px" }} src={navergreen} alt="네이버" /></Img>네이버로 이용하기</SnsBtn>
+                          
                             <LoginBtn onClick={MovingLogin}>
-                                <Img><img style={{width:"17px", height:"17px"}} src={phone} alt="본인인증"/></Img>로그인하기</LoginBtn>
+                                <Img><img style={{ width: "17px", height: "17px" }} src={phone} alt="본인인증" /></Img>로그인하기</LoginBtn>
                         </Btngroup>
                         <ModalFooter>
                             <FooterText>
-                                도움이 필요하면 <a href="help@bunjang.co.kr" style={{textDecoration:"underline", color:"rgb(153, 153, 153)"}}>이메일</a> 또는 고객센터<span style={{fontWeight:"600"}}>1670-2910</span>로 문의 부탁드립니다.<br/>
+                                도움이 필요하면
                                 고객센터 운영시간: 09~18시 (점심시간 12~13시, 주말/공휴일 제외)
                             </FooterText>
                         </ModalFooter>
                     </ModalContainer>
                 </Background>
-            ) : null }
+            ) : null}
         </div>
     )
 };
@@ -81,6 +92,7 @@ const CloseBtn = styled.button`
     top:20px;
     right: 20px;
     border: none;
+    
 `;
 
 const Btngroup = styled.div`
@@ -97,9 +109,13 @@ const Img = styled.div`
 `;
 
 const SnsBtn = styled.button`
+    color:black;
+    transition: background 0.3s, color 0.3;
+
     width: 100%;
     height: 38px;
     box-shadow: rgb(0 0 0 / 5%) 0px 1px 7px 0px;
+    
     background: rgb(255, 255, 255);
     text-align: center;
     border-radius: 4px;
@@ -109,9 +125,11 @@ const SnsBtn = styled.button`
 `;
 
 const LoginBtn = styled(SnsBtn)`
+
+
     :hover{
         background: gray;
-        color: white;
+        color: black;
         font-weight: bold;
     }
 `;

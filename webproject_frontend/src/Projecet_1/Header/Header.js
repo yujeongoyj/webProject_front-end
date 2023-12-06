@@ -314,25 +314,7 @@ const MainHeaderRight = styled.div`
   align-items: center;
   flex-grow: 1;
 `;
-const TalkButton = styled.button`
-  margin-left: 30px;
-  display: flex;
-  align-items: center;
-  position: relative;
-  border: none;
-  background: #fff;
-  &:hover,
-  :focus {
-    outline: none;
-  }
-  img {
-    margin-right: 5px;
-    vertical-align: bottom;
-    width: 23px;
-    height: 24px;
-    background-color: transparent;
-  }
-`;
+
 const HeaderRightA = styled.a`
   margin-left: 30px;
   display: flex;
