@@ -269,14 +269,12 @@ function Header() {
   
   const handleCategoryMouseLeave = () => {
     setCategoryHovered(false);
-    // 마우스가 메뉴를 떠난 후 서브 메뉴를 숨깁니다.
     setTimeout(() => {
       setSubMenuVisible(false);
     }, 200);
   };
   
   const handleSubMenuMouseEnter = () => {
-    // SubMenu에 마우스가 들어왔을 때도 메뉴를 유지시킵니다.
     setCategoryHovered(true);
     setSubMenuVisible(true);
   };

@@ -1,5 +1,4 @@
 import React from 'react';
-
 import Login from './Projecet_1/pages/Login';
 import MainPage from './Projecet_1/pages/MainPage';
 import SignUp from './Projecet_1/pages/SignUp';
@@ -20,13 +19,12 @@ import Dailykitchenutensils from './Projecet_1/pages/CategoryMenu/Dailykitchenut
 import Book from './Projecet_1/pages/CategoryMenu/Book/7';
 import Clock from './Projecet_1/pages/CategoryMenu/Clock/8';
 import Jewelry from './Projecet_1/pages/CategoryMenu/Jewelry/9';
-
+import ProductDetail from './Projecet_1/pages/ProductDetail'
 
 function App() {
   return (
     <Router>
       <div className="App">
-       
         <Header />
         <Routes>
           <Route path='/' element={<Home/>} />
@@ -43,6 +41,7 @@ function App() {
           <Route path="/8" element={<Clock/>} />
           <Route path="/9" element={<Jewelry/>} />
           <Route path="/clothing" element={<Clothing />} />
+          <Route path="/product/detail/:id" element={<ProductDetail />} />
         </Routes>
         <Footer />
       </div>

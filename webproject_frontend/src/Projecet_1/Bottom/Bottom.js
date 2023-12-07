@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import Loading from '../Product/Loading';
 import './Product.css';
 
@@ -41,24 +42,26 @@ const Bottom = () => {
 
   return (
     <div className="bottom">
-      <h1 className="bottom_list_title">중고거래 매물</h1>
+      <h1 className="bottom_list_title">오늘의 상품 추천</h1>
       <div className="card_product">
         {products.map(productData => (
           <div className="custom-product-wrapper" key={productData.products.id}>
-            <div className="card" key={productData.products.id}>
-              <div className="card_photo">
-                <img
-                  className="card_photoimg"
-                  src={productData.image}
-                  alt={productData.products.productName}
-                />
+            <Link to={`/product/detail/${productData.products.id}`}>
+              <div className="card" key={productData.products.id}>
+                <div className="card_photo">
+                  <img
+                    className="card_photoimg"
+                    src={productData.image}
+                    alt={productData.products.productName}
+                  />
+                </div>
+                <div className="card_desc">
+                  <h2 className="card_title">{productData.products.productName}</h2>
+                  <p className="card_description">{productData.products.description}</p>
+                  <div className="card_price">{productData.products.price}원</div>
+                </div>
               </div>
-              <div className="card_desc">
-                <h2 className="card_title">{productData.products.productName}</h2>
-                <p className="card_description">{productData.products.description}</p>
-                <div className="card_price">{productData.products.price}원</div>
-              </div>
-            </div>
+            </Link>
           </div>
         ))}
       </div>  
