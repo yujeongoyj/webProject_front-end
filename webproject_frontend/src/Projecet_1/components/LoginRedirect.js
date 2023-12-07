@@ -4,6 +4,8 @@ import { useParams } from "react-router";
 function LoginRedirect() {
   const params = useParams();
 
+  
+
   useEffect(() => {
     localStorage.clear();
     localStorage.setItem("token", params.token);

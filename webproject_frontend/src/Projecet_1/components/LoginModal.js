@@ -19,9 +19,11 @@ const LoginModal = (props) => {
 
     const handleSocialLogin = (provider) => {
         // 백엔드에서 OAuth 인증 URL을 동적으로 생성하도록 수정
-        const oauthUrl = `http://localhost:8090/oauth2/authorization/${provider}`;
+        const oauthUrl = `http://localhost:8080/oauth2/authorization/${provider}`;
         window.location.href = oauthUrl;
     };
+
+    
 
     return (
         <div>
