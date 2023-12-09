@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Loading from '../../Product/Loading';
+import Loading from '../../../Product/Loading';
+import './4.css';
 
-const WomenClothing = () => {
+const WalletBag = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [products, setProducts] = useState([]);
@@ -13,7 +14,7 @@ const WomenClothing = () => {
     axios.get(apiUrl)
       .then(response => {
         const productsWithImages = response.data
-          .filter(productData => productData.products.category === 2) // Filter products with category 숫자 값
+          .filter(productData => productData.products.category === 4) // Filter products with category 숫자 값
           .map(productData => ({
             ...productData,
             image: `data:image/png;base64, ${productData.image}`
@@ -42,7 +43,7 @@ const WomenClothing = () => {
 
   return (
     <div className="bottom">
-      <h1 className="bottom_list_title">여성의류</h1>
+      <h1 className="bottom_list_title">가방/지갑 제품 추천</h1>
       <div className="card_product">
         {products.map(productData => (
           <div className="custom-product-wrapper" key={productData.products.id}>
@@ -67,4 +68,4 @@ const WomenClothing = () => {
   );
 };
 
-export default WomenClothing;
+export default WalletBag;

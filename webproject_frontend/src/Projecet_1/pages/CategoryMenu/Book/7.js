@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Loading from '../../Product/Loading';
+import Loading from '../../../Product/Loading';
+import './7.css';
 
-const Sho = () => {
+const Book = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [products, setProducts] = useState([]);
@@ -13,7 +14,7 @@ const Sho = () => {
     axios.get(apiUrl)
       .then(response => {
         const productsWithImages = response.data
-          .filter(productData => productData.products.category === 2) // Filter products with category 숫자 값
+          .filter(productData => productData.products.category === 7) // Filter products with id === 1
           .map(productData => ({
             ...productData,
             image: `data:image/png;base64, ${productData.image}`
@@ -42,7 +43,9 @@ const Sho = () => {
 
   return (
     <div className="bottom">
-      <h1 className="bottom_list_title">여성의류</h1>
+      <div className="bottom_title">
+      <h1 className="list_title">도서/티켓/문구</h1>
+      </div>
       <div className="card_product">
         {products.map(productData => (
           <div className="custom-product-wrapper" key={productData.products.id}>
@@ -67,4 +70,4 @@ const Sho = () => {
   );
 };
 
-export default Sho;
+export default Book;
